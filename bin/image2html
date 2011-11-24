@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+$:.unshift File.join(File.dirname(__FILE__),'..','lib')
+
+require 'image2html'
+
+image = Image2Html::Base.new(ARGV[0], ARGV[1])
+image.write
+
