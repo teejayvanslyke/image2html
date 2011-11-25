@@ -8,6 +8,12 @@ class Snapper
     @options = options
     initialize_view
   end
+
+  def batch(files)
+    files.each_with_index do |file, index|
+      save "file://#{file.path}", File.dirname(__FILE__) + "/../tmp/frame#{'%04d' % index}.png"
+    end
+  end
   
   def save(url, file)
     view.setFrameLoadDelegate(self)

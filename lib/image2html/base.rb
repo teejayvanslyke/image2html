@@ -47,6 +47,7 @@ module Image2Html
     end
 
     def write 
+      puts "Writing"
       out << %{<html><body style="margin:0; padding:0"><div style="font-family: Helvetica; font-size: 12px; text-align: right">}
 
       pixel     = 0

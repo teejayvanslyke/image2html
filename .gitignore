@@ -48,3 +48,5 @@ pkg
 #*.rbc
 
 output/*
+tmp/*
+input/*

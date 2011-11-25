@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+$:.unshift File.join(File.dirname(__FILE__),'..','lib')
+
+require 'image2html'
+
+video = Image2Html::Video.new(ARGV[0], :transpose => 2)
+
+video.make_video
+

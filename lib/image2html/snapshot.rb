@@ -11,6 +11,7 @@ module Image2Html
     end
 
     def snap
+      puts "Snapping"
       `macruby -r #{File.dirname(__FILE__) + '/snapper.rb'} -e \"Snapper.new(:width => #{@image.width}, :height => #{@image.height}).save('file://#{@html_file.path}', '#{@image_file.path}')\"`
     end
 
@@ -19,4 +20,5 @@ module Image2Html
       File.open(@image_file.path)
     end
   end
+
 end
