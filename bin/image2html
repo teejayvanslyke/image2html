@@ -3,6 +3,9 @@ $:.unshift File.join(File.dirname(__FILE__),'..','lib')
 
 require 'image2html'
 
-image = Image2Html::Base.new(ARGV[0], ARGV[1])
-image.write
+snapshot = Image2Html::Snapshot.new(ARGV[0], ARGV[1])
+
+outfile = File.open(File.dirname(__FILE__) + '/../output/out.png', 'w')
+png = snapshot.to_png
+outfile.write png.read
 
